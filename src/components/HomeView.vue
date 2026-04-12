@@ -5,7 +5,7 @@ import CardPokemonSelected from './CardPokemonSelected.vue';
 
 let urlBaseSvg = ref("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/");
 let pokemons = reactive(ref());
-let searchPokemonField = ref("bulba");
+let searchPokemonField = ref("");
 let pokemonSelected = reactive(ref());
 let loading = ref(false);
 
@@ -47,7 +47,7 @@ const selectPokemon = async (pokemon) => {
 
         <!-- CONTENT -->
         <div class="col-md">
-          <div class="card card-list">
+          <div class="card card-list p-2">
             <div class="card-body row">
               <div class="mb-3">
               <label hidden for="searchPokemonField" class="form-label">Pesquisar...</label>
@@ -70,8 +70,14 @@ const selectPokemon = async (pokemon) => {
 
 <style scoped>
 .card-list {
-  max-height: 450px;
+  max-height: 75vh;
   overflow-y: scroll;
   overflow-x: hidden;
+}
+
+@media (max-width: 600px) {
+  .card-list {
+    max-height: 40vh;
+  }
 }
 </style>

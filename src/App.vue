@@ -83,15 +83,15 @@ const num = ref(0)
 <style>
 /* LAYOUT BASE */
 .layout {
-  /* min-height: 100vh; */
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
 /* CONTEÚDO PRINCIPAL */
 .main {
-  flex: 1;
-  padding-top: 70px; /* altura da navbar fixed */
+  /* flex: 1; */
+  padding-top: 30px; /* altura da navbar fixed */
 }
 
 /* FOOTER */
