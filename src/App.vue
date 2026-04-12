@@ -1,8 +1,8 @@
 <script setup>
-import HomeView from './components/HomeView.vue';
-import { ref } from 'vue'
+import HomeView from "./components/HomeView.vue";
+import { ref } from "vue";
 
-const num = ref(0)
+const num = ref(0);
 </script>
 
 <template>
@@ -38,9 +38,7 @@ const num = ref(0)
           aria-labelledby="offcanvasNavbarLabel"
         >
           <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
-              Menu
-            </h5>
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
             <button
               type="button"
               class="btn-close"
@@ -52,15 +50,11 @@ const num = ref(0)
           <div class="offcanvas-body">
             <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
               <li class="nav-item">
-                <router-link class="nav-link" to="/">
-                  Home
-                </router-link>
+                <router-link class="nav-link" to="/"> Home </router-link>
               </li>
 
               <li class="nav-item">
-                <router-link class="nav-link" to="/about">
-                  About
-                </router-link>
+                <router-link class="nav-link" to="/about"> About </router-link>
               </li>
             </ul>
           </div>
@@ -81,27 +75,30 @@ const num = ref(0)
 </template>
 
 <style>
+template {
+  padding: 0;
+}
 /* LAYOUT BASE */
 .layout {
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
 /* CONTEÚDO PRINCIPAL */
 .main {
-  /* flex: 1; */
   padding-top: 30px; /* altura da navbar fixed */
 }
 
 /* FOOTER */
 footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 56px;
-  }
+  bottom: 0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 56px;
+}
 </style>
