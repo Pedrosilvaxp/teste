@@ -43,25 +43,6 @@ const pokemon = defineProps(["name", "xp", "height", "img", "loading"]);
 <style scoped>
 @reference "tailwindcss";
 
-.egg-glow {
-  filter: drop-shadow(0 0 8px rgba(70, 252, 244, 0.8))
-          drop-shadow(0 0 20px rgba(70, 252, 244, 0.5))
-          drop-shadow(0 0 40px rgba(70, 252, 244, 0.3));
-  animation: pulse-glow 2s ease-in-out infinite alternate;
-}
-
-@keyframes pulse-glow {
-  from {
-    filter: drop-shadow(0 0 6px rgba(70, 252, 244, 0.6))
-            drop-shadow(0 0 16px rgba(70, 252, 244, 0.35))
-            drop-shadow(0 0 30px rgba(70, 252, 244, 0.2));
-  }
-  to {
-    filter: drop-shadow(0 0 12px rgba(70, 252, 244, 1))
-            drop-shadow(0 0 28px rgba(70, 252, 244, 0.7))
-            drop-shadow(0 0 50px rgba(70, 252, 244, 0.4));
-  }
-}
 
 @media (max-width: 768px) {
   .CardPokemonSelected {
