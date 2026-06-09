@@ -14,12 +14,17 @@ onMounted(() => {
 });
 
 const pokemonsFiltered = computed(() => {
-  if (pokemons.value && searchPokemonField.value) {
+  if (!pokemons.value) return [];
+
+  // Quando pesquisar
+  if (searchPokemonField.value.trim()) {
     return pokemons.value.filter(pokemon =>
       pokemon.name.toLowerCase().includes(searchPokemonField.value.toLowerCase())
-    )
+    );
   }
-  return pokemons.value;
+
+  // Sem pesquisa: mostra apenas os 20 primeiros
+  return pokemons.value.slice(0, 20);
 });
 
 const selectPokemon = async (pokemon) => {
