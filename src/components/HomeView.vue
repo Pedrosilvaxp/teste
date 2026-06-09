@@ -44,7 +44,7 @@ const gradientMain = 'linear-gradient(90deg, rgba(72, 63, 251, 0.8071) 0%, rgba(
           :name="pokemonSelected?.name"
           :xp="pokemonSelected?.base_experience"
           :height="pokemonSelected?.height"
-          :img="pokemonSelected?.sprites.other.dream_world.front_default"
+          :img="pokemonSelected?.sprites?.other?.dream_world?.front_default"
           :loading="loading"
           />
         </div>
