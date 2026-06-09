@@ -6,99 +6,36 @@ const num = ref(0);
 </script>
 
 <template>
-  <div class="layout">
+  <div class="flex min-h-screen flex-col">
     <!-- NAVBAR -->
-    <nav class="navbar bg-body-tertiary fixed-top">
-      <div class="container-fluid">
-        <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+    <nav class=" fixed top-0 z-50 w-full px-4 py-3 text-center">
+      <div class="container rounded-2xl bg-[#3A38CF]">
+        <a class="flex items-center gap-2 text-decoration-none" href="#">
           <img
             src="https://cdn-icons-png.flaticon.com/512/188/188987.png"
             alt="Logo"
             width="30"
             height="30"
           />
-          PokeVite
+          <span class="fw-bold text-dark text-white">PokeVite</span>
         </a>
-
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="offcanvas"
-          data-bs-target="#offcanvasNavbar"
-          aria-controls="offcanvasNavbar"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div
-          class="offcanvas offcanvas-end"
-          tabindex="-1"
-          id="offcanvasNavbar"
-          aria-labelledby="offcanvasNavbarLabel"
-        >
-          <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="offcanvas"
-              aria-label="Close"
-            ></button>
-          </div>
-
-          <div class="offcanvas-body">
-            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-              <li class="nav-item">
-                <router-link class="nav-link" to="/"> Home </router-link>
-              </li>
-
-              <li class="nav-item">
-                <router-link class="nav-link" to="/about"> About </router-link>
-              </li>
-            </ul>
-          </div>
-        </div>
       </div>
     </nav>
 
     <!-- MAIN CONTENT -->
-    <main class="main">
+    <main class="main pt-20 flex-1">
       <HomeView />
     </main>
 
     <!-- FOOTER -->
-    <footer class="bg-primary text-light text-center py-3">
+    <footer class="bg-primary text-light text-center py-3 border-t-0"
+      style="background: linear-gradient(90deg, rgba(72, 63, 251, 0.8071) 0%, rgba(70, 252, 244, 0.510241596368555) 100%); position:fixed; bottom:0; left:0; width:100vw; height:56px; display:flex; align-items:center; justify-content:center; background-color: #3fa0fb;"
+    >
       © {{ new Date().getFullYear() }} PokeVite
     </footer>
   </div>
 </template>
 
 <style>
-template {
-  padding: 0;
-}
-/* LAYOUT BASE */
-.layout {
-  display: flex;
-  flex-direction: column;
-}
-
-/* CONTEÚDO PRINCIPAL */
-.main {
-  padding-top: 30px; /* altura da navbar fixed */
-}
-
-/* FOOTER */
-footer {
-  bottom: 0;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 56px;
-}
+@reference "tailwindcss";
 </style>
