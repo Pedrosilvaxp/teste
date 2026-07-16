@@ -8,5 +8,22 @@ export default defineConfig({
   plugins: [
     vue(),
     tailwindcss(), 
-    VitePWA({ registerType: 'autoUpdate' })],
+    VitePWA({ 
+      registerType: 'autoUpdate',
+      workbox: {
+        globPatterns: ['**/*.{js,css,html,ico,png,svg,webmanifest}'],
+        runtimeCaching: [
+          {
+            urlPattern: /^https:\/\/pokeapi\.co\/.*/,
+            handler: 'NetworkOnly',
+          },
+          {
+            urlPattern: /^https:\/\/raw\.githubusercontent\.com\/.*/,
+            handler: 'NetworkOnly',
+          },
+        ],
+        skipWaiting: true,
+        clientsClaim: true,
+      },
+    })],
 })
