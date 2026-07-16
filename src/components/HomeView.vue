@@ -1,12 +1,12 @@
 <script setup>
-import { onMounted, reactive, ref, computed } from 'vue';
+import { onMounted, ref, computed } from 'vue';
 import ListPokemons from './ListPokemons.vue';
 import CardPokemonSelected from './CardPokemonSelected.vue';
 
 const urlBaseSvg = ref("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/");
-const pokemons = reactive(ref());
+const pokemons = ref();
 const searchPokemonField = ref("");
-const pokemonSelected = reactive(ref());
+const pokemonSelected = ref();
 const loading = ref(false);
 
 onMounted(() => {
