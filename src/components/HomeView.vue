@@ -50,7 +50,7 @@ const selectPokemon = async (pokemon) => {
 </script>
 
 <template>
-  <main class="relative overflow-hidden py-6">
+  <main class="relative overflow-hidden py-3">
     <!-- Glow Background -->
     <div
       class="absolute -left-52 -top-72 h-[550px] w-[550px] rounded-full bg-violet-600/15 blur-[180px]"
@@ -61,7 +61,7 @@ const selectPokemon = async (pokemon) => {
     ></div>
 
     <div
-      class="relative z-10 mx-auto w-full max-w-[1200px] px-5 py-6"
+      class="relative z-10 mx-auto w-full max-w-[1200px] px-5"
     >
       <div
         class="grid gap-6 xl:grid-cols-[280px_minmax(0,1fr)] 2xl:grid-cols-[330px_minmax(0,1fr)]"
@@ -77,20 +77,20 @@ const selectPokemon = async (pokemon) => {
 
         <!-- LISTA -->
         <section
-          class="overflow-hidden rounded-[28px] border border-white/10 bg-white/5 shadow-[0_25px_70px_rgba(0,0,0,.35)] backdrop-blur-2xl"
+          class="overflow-visible rounded-[28px] border border-white/10 bg-white/5 shadow-[0_25px_70px_rgba(0,0,0,.35)] backdrop-blur-2xl"
         >
           <div class="p-6">
             <!-- HEADER -->
             <div
-              class="mb-8 flex flex-col gap-5 xl:flex-row xl:items-center xl:justify-between"
+              class="mb-2 flex flex-col xl:flex-row xl:items-center xl:justify-between"
             >
               <div>
                 <h1 class="text-4xl font-bold text-white xl:text-5xl">
-                  Pokédex
+                  Pokedex
                 </h1>
 
                 <p class="mt-1 text-slate-400">
-                  Escolha um Pokémon para visualizar seus detalhes.
+                  Escolha um Pokemon para visualizar seus detalhes.
                 </p>
               </div>
 
@@ -114,7 +114,7 @@ const selectPokemon = async (pokemon) => {
                 <input
                   v-model="searchPokemonField"
                   type="text"
-                  placeholder="Pesquisar Pokémon..."
+                  placeholder="Pesquisar Pokemon..."
                   class="w-full rounded-2xl border border-white/10 bg-[#181D4A] py-3 pl-14 pr-5 text-white outline-none transition-all placeholder:text-slate-500 focus:border-violet-500 focus:ring-4 focus:ring-violet-500/20"
                 />
               </div>
@@ -122,7 +122,7 @@ const selectPokemon = async (pokemon) => {
 
             <!-- GRID -->
             <div
-              class="card-list grid gap-5 [grid-template-columns:repeat(auto-fit,minmax(150px,1fr))]"
+              class="card-list pt-10 grid gap-5 [grid-template-columns:repeat(auto-fit,minmax(150px,1fr))]"
             >
               <ListPokemons
                 v-for="pokemon in pokemonsFiltered"

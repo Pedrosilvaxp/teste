@@ -73,32 +73,32 @@ const pokemon = defineProps([
       <div class="mt-10 grid grid-cols-2 gap-4">
 
         <div
-          class="rounded-2xl border border-white/10 bg-[#171B4B] p-5"
+          class="rounded-2xl border border-white/10 bg-[#171B4B] p-2 text-sm"
         >
           <span
-            class="text-xs uppercase tracking-widest text-slate-500"
+            class="uppercase tracking-widest text-slate-500"
           >
             Base XP
           </span>
 
           <h3
-            class="mt-2 text-3xl font-bold text-white"
+            class="mt-2 text-sm font-bold text-white"
           >
             {{ pokemon.xp || "??" }}
           </h3>
         </div>
 
         <div
-          class="rounded-2xl border border-white/10 bg-[#171B4B] p-5"
+          class="rounded-2xl border border-white/10 bg-[#171B4B] p-2 text-sm"
         >
           <span
-            class="text-xs uppercase tracking-widest text-slate-500"
+            class="uppercase tracking-widest text-slate-500"
           >
             Altura
           </span>
 
           <h3
-            class="mt-2 text-3xl font-bold text-white"
+            class="mt-2 text-sm font-bold text-white"
           >
             {{ pokemon.height || "??" }}
           </h3>
@@ -155,3 +155,4 @@ top:0;
 }
 
 </style>
+
