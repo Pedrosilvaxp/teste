@@ -1,5 +1,7 @@
 <script setup>
 import HomeView from "./components/HomeView.vue";
+import BackToTop from "./components/BackToTop.vue";
+
 </script>
 
 <template>
@@ -35,6 +37,8 @@ import HomeView from "./components/HomeView.vue";
     <main class="flex-1">
       <HomeView />
     </main>
+
+    <BackToTop />
 
     <!-- Footer -->
 
