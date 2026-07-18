@@ -1,41 +1,105 @@
 <script setup>
 import HomeView from "./components/HomeView.vue";
-import { ref } from "vue";
-
-const num = ref(0);
 </script>
 
 <template>
-  <div class="flex min-h-screen flex-col">
-    <!-- NAVBAR -->
-    <nav class=" fixed top-0 z-50 w-full px-4 py-3 text-center">
-      <div class="container rounded-2xl bg-[#3A38CF]">
-        <a class="flex items-center gap-2 text-decoration-none" href="#">
-          <img
-            src="https://cdn-icons-png.flaticon.com/512/188/188987.png"
-            alt="Logo"
-            width="30"
-            height="30"
-          />
-          <span class="fw-bold text-dark text-white">PokeVite</span>
-        </a>
-      </div>
-    </nav>
+  <div
+    class="
+      min-h-screen
+      flex
+      flex-col
+      bg-[#0C0D38]
+      overflow-x-hidden
+    "
+  >
+    <!-- Background Glow -->
 
-    <!-- MAIN CONTENT -->
-    <main class="main pt-20 flex-1">
+    <div
+      class="fixed inset-0 -z-10 overflow-hidden"
+    >
+      <div
+        class="absolute -left-48 -top-48 h-[520px] w-[520px] rounded-full bg-violet-600/15 blur-[180px]"
+      />
+
+      <div
+        class="absolute right-[-120px] top-1/3 h-[420px] w-[420px] rounded-full bg-cyan-400/10 blur-[170px]"
+      />
+
+      <div
+        class="absolute bottom-[-200px] left-1/2 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-blue-500/10 blur-[200px]"
+      />
+    </div>
+
+    <!-- Conteúdo -->
+
+    <main class="flex-1">
       <HomeView />
     </main>
 
-    <!-- FOOTER -->
-    <footer class="bg-primary text-light text-center py-3 border-t-0"
-      style="background: linear-gradient(90deg, rgba(72, 63, 251, 0.8071) 0%, rgba(70, 252, 244, 0.510241596368555) 100%); position:fixed; bottom:0; left:0; width:100vw; height:56px; display:flex; align-items:center; justify-content:center; background-color: #3fa0fb;"
+    <!-- Footer -->
+
+    <footer
+      class="
+        border-t
+        border-white/10
+
+        bg-[#131742]/80
+        backdrop-blur-xl
+
+        py-4
+
+        text-center
+        text-sm
+        text-slate-400
+      "
     >
-      © {{ new Date().getFullYear() }} PokeVite
+      © {{ new Date().getFullYear() }}
+
+      <span class="mx-2 text-violet-400">
+        •
+      </span>
+
+      <span class="font-semibold text-white">
+        PokeVite
+      </span>
+
+      <span class="mx-2 text-violet-400">
+        •
+      </span>
+
+      Desenvolvido com Vue + Tailwind
     </footer>
   </div>
 </template>
 
 <style>
-@reference "tailwindcss";
+@import "tailwindcss";
+
+html,
+body,
+#app {
+
+  margin: 0;
+  padding: 0;
+
+  width: 100%;
+  min-height: 100%;
+
+  overflow-x: hidden;
+
+  background: #0C0D38;
+
+}
+
+body{
+
+  font-family:
+  Inter,
+  system-ui,
+  -apple-system,
+  BlinkMacSystemFont,
+  "Segoe UI",
+  sans-serif;
+
+}
 </style>

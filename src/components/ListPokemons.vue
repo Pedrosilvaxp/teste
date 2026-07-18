@@ -1,24 +1,100 @@
 <script setup>
-const pokemon = defineProps(["name", "urlBaseSvg"]);
+const pokemon = defineProps([
+  "name",
+  "urlBaseSvg"
+]);
 </script>
 
 <template>
-  <div class="w-full p-0.5 sm:col-span-1 md:col-span-1 lg:col-span-1">
+  <article
+    class="
+      group
+      cursor-pointer
+      rounded-3xl
+      border
+      border-white/8
+      bg-[#151A46]/85
+      p-5
+      transition-all
+      duration-300
+      hover:-translate-y-2
+      hover:border-violet-400/40
+      hover:bg-[#1A2052]
+      hover:shadow-[0_20px_45px_rgba(124,92,255,.18)]
+    "
+  >
+
+    <!-- Imagem -->
+
     <div
-      class="card cardListPokemon cursor-pointer rounded-lg p-2 text-center text-white transition-all duration-1000 hover:scale-105"
-      :style="{ background: 'linear-gradient(90deg, rgba(72, 63, 251, 0.8071) 0%, rgba(70, 252, 244, 0.510241596368555) 100%)' }"
+      class="
+        flex
+        h-28
+        items-center
+        justify-center
+      "
     >
-      <p class="text-center text-xs font-medium">{{ pokemon.name }}</p>
+
       <img
         :src="urlBaseSvg"
-        class="mx-auto mt-1 h-14 w-auto transition-all duration-1000 hover:p-[0.1rem]"
-        alt="..."
-        height="60"
+        :alt="pokemon.name"
+        class="
+          h-20
+          w-auto
+          transition-all
+          duration-300
+          group-hover:scale-110
+          group-hover:drop-shadow-[0_0_18px_rgba(124,92,255,.55)]
+        "
       />
+
     </div>
-  </div>
+
+    <!-- Nome -->
+
+    <div class="mt-5 text-center">
+
+      <h3
+        class="
+          truncate
+          text-[15px]
+          font-semibold
+          capitalize
+          tracking-wide
+          text-white
+        "
+      >
+        {{ pokemon.name }}
+      </h3>
+
+      <span
+        class="
+          mt-2
+          inline-flex
+          rounded-full
+          bg-white/5
+          px-3
+          py-1
+          text-[11px]
+          tracking-widest
+          uppercase
+          text-slate-400
+        "
+      >
+        Pokémon
+      </span>
+
+    </div>
+
+  </article>
 </template>
 
 <style scoped>
-@reference "tailwindcss";
+
+article{
+
+backdrop-filter:blur(18px);
+
+}
+
 </style>
